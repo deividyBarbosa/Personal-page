@@ -14,8 +14,8 @@ body * {
 
 #container {
     width: 360px;
-    border: 1px solid red;
     margin: 56px auto 0px;
+    padding: 0px 24px;
 }
 
 #profile {
@@ -34,3 +34,44 @@ body * {
     padding-top: 8px;
 }
 
+/* links */
+#links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+}
+
+#links li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    
+    padding: 16px 24px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: background 0.3s;
+}
+
+/* pseudo-selector */
+
+#links li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid white;
+}
+
+#social-links {
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    font-size: 24px;
+}
