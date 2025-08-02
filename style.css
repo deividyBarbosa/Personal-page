@@ -3,13 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --bg-url: url(./assets/background-dark.jpg);
+    --color-switch: url(./assets/moon-stars.svg);
+}
+
+.light{
+    --bg-url: url(./assets/background-light.jpg);
+    --color-switch: url(./assets/sun.svg);
+}
 body {
-    background: url(./assets/bg-mobile.jpg) no-repeat top center /cover;
+    background: var(--bg-url) no-repeat top center /cover ;
+    background-attachment: fixed;
 }
 
 body * {
     font-family: "Inter", sans-serif;
     color: white;
+    text-shadow: 3px 3px 5px black;
 }
 
 #container {
@@ -20,7 +32,7 @@ body * {
 
 #profile {
     text-align: center;
-    padding: 24px;
+    padding: 48px;
     
 }
 
@@ -32,8 +44,41 @@ body * {
     font-weight: 500;
     line-height: 24px;
     padding-top: 8px;
+    text-shadow: 3px 3px 5px black;
 }
 
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+#switch button {
+    height: 32px;
+    width: 32px;
+    background: white var(--color-switch) no-repeat center;
+    border-radius: 50%;
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    display: block;
+    height: 24px;
+    width: 64px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgb(255, 255, 255, 0.5);
+    border-radius: 100px;
+    backdrop-filter: blur(4px);
+}
 /* links */
 #links {
     list-style: none;
@@ -49,7 +94,7 @@ body * {
     justify-content: center;
     
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgb(255, 255, 255, 0.5);
+    border: 2px solid rgb(255, 255, 255, 0.5);
     
     padding: 16px 24px;
     border-radius: 8px;
@@ -65,13 +110,30 @@ body * {
 
 #links li a:hover {
     background: rgba(255, 255, 255, 0.05);
-    border: 1.5px solid white;
+    border: 2px solid white;
 }
 
 #social-links {
     padding: 24px 0;
     display: flex;
     justify-content: center;
-    gap: 32px;
+    padding: 24px 0;
     font-size: 24px;
+}
+
+#social-links a {
+    display: flex;
+    padding: 16px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+#social-links a:hover {
+    background: rgb(255, 255, 255, 0.2);
+}
+
+footer {
+    font-size: 14px;
+    text-align: center;
+
 }
